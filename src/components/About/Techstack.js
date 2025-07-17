@@ -1,68 +1,53 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
   DiPython,
   DiGit,
-  DiJava,
 } from "react-icons/di";
-import {
-  SiRedis,
-  SiFirebase,
-  SiNextdotjs,
-  SiSolidity,
-  SiPostgresql,
-} from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
+import { PiFileSqlThin } from "react-icons/pi";
+import { SiTableau } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import './Toolstack.css'; // Import the new CSS file
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
+    <Row style={{ justifyContent: "center", paddingTop: "20px" ,paddingBottom: "50px" }}>
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper"> {/* Wrapper for icon and tooltip */}
+          <DiPython />
+          <span className="tooltip-text">Python</span> {/* Tooltip text */}
+        </div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper">
+          <PiFileSqlThin />
+          <span className="tooltip-text">SQL</span>
+        </div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <TbBrandGolang />
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper">
+          <SiTableau />
+          <span className="tooltip-text">Tableau</span>
+        </div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper">
+          <FaAws />
+          <span className="tooltip-text">Amazon Web Services</span>
+        </div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper">
+          <DiGit />
+          <span className="tooltip-text">Git</span>
+        </div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedis />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
+      <Col xs={4} md={2}>
+        <div className="tech-icon-wrapper">
+          <DiJavascript1 />
+          <span className="tooltip-text">Javascript</span>
+        </div>
       </Col>
     </Row>
   );

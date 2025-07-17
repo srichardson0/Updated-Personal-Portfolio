@@ -5,7 +5,9 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import Tilt from "react-parallax-tilt";
-
+import EducationTimeline from "./EducationTimeline"; // Import the new component
+import { Link } from "react-router-dom"; // Import Link
+ 
 function Home() {
   return (
     <section>
@@ -23,37 +25,54 @@ function Home() {
                 <strong className="main-name"> SASHA RICHARDSON</strong>
               </h1>
 
-              {/* This is where your Type component content goes */}
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
-
-              {/* Move the "MA Digital Humanities Student" text here */}
+              { /*
               <p style={{ textAlign: "left", marginLeft: 45, fontSize: "1.2em", fontWeight: "bold" }}>
                 MA Digital Humanities Student @ The CUNY Graduate Center
               </p>
-              {/* Add the mailto link here */}
-              <p style={{ textAlign: "left",  marginLeft: 45, marginTop: 5 }}> {/* Adjust marginTop as needed for spacing */}
+              <p style={{ textAlign: "left", marginLeft: 45, marginTop: 5 }}>
                 <a href="mailto:sfrichardson9@gmail.com" style={{ color: '#888', textDecoration: 'none' }}>
                   sarichardson@graduatecenter.cuny.edu
                 </a>
               </p>
+                */}
             </Col>
 
-          <Col md={5} style={{ paddingBottom: 20, marginTop: '0px' }}> {/* Changed md={4} to md={5} or md={6} */}
+            <Col md={5} style={{ paddingBottom: 20, marginTop: '0px' }}>
               <Tilt>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "900px", maxWidth: "100%", height: "auto" }}
-              />
+                <img
+                  src={homeLogo}
+                  alt="home pic"
+                  className="img-fluid home-avatar" // Add this class
+                  style={{ maxHeight: "900px", maxWidth: "100%", height: "auto" }}
+                />
               </Tilt>
             </Col>
           </Row>
-          {/* Removed the extra Row and Col that contained the text */}
         </Container>
       </Container>
+      {/* --- Education Timeline Section --- */}
+      <Container fluid className="home-about-section" id="education">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={12}>
+              <EducationTimeline />
+            </Col>
+          </Row>
+          {/* Add the button here, typically in its own row or column for layout control */}
+          <Row className="justify-content-center mt-5">
+            <Col md={4} className="text-center">
+              {/* Add the custom class 'learn-more-btn' here */}
+              <Link to="/about" className="btn btn-primary btn-lg learn-more-btn">
+                Learn More About Me
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+      {/* --- End Education Timeline Section --- */}
       <Home2 />
     </section>
   );

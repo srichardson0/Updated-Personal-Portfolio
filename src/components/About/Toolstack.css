@@ -1,0 +1,61 @@
+/* src/components/Toolstack.css */
+
+/* This takes the place of your old .tech-icons, applying to the wrapper */
+.tech-icon-wrapper {
+  position: relative; /* Crucial for positioning the tooltip */
+  display: flex; /* Ensures the icon is centered within the wrapper */
+  flex-direction: column; /* Stacks icon and hidden tooltip vertically */
+  justify-content: center;
+  align-items: center;
+  margin: 10px; /* Example spacing, adjust as per your original .tech-icons margin */
+  padding: 10px; /* Example padding, adjust as per your original .tech-icons padding */
+  cursor: pointer; /* Indicates interactivity */
+  /* Add any other styles that were previously on .tech-icons here, e.g., border, background */
+}
+
+/* Styles for the actual icons (SVGs inside the wrapper) */
+.tech-icon-wrapper svg {
+  font-size: 4em; /* Example size - keep your original icon size if different */
+  color: #fff; /* Example color - keep your original icon color */
+  /* No changes to the icons' appearance as per your request */
+}
+
+/* Base styles for the tooltip text */
+.tooltip-text {
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* For fade-in effect */
+  width: max-content; /* Adjust width to content */
+  background-color: #333; /* Dark background for prominence */
+  color: #fff; /* White text */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 8px;
+  position: absolute; /* Positioned relative to .tech-icon-wrapper */
+  z-index: 1000; /* Ensure it's on top of other content */
+  bottom: calc(100% + 10px); /* Position above the icon + 10px space */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px); /* Center horizontally, start slightly lower */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for appearance */
+  font-size: 0.9em; /* Readable font size */
+  white-space: nowrap; /* Prevent text from wrapping */
+  pointer-events: none; /* Crucial: Allows hover to remain on parent even if tooltip overlaps */
+}
+
+/* Arrow for the tooltip */
+.tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px; /* Center the arrow */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent; /* Creates a downward arrow */
+}
+
+/* Show the tooltip on hover */
+.tech-icon-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Move to final position and fade in */
+}

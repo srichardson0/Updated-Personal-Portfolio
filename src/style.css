@@ -260,7 +260,7 @@ button:focus {
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
+  padding-bottom: -30px !important;
   padding-top: 30px !important;
 }
 
@@ -741,3 +741,69 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* src/components/EducationTimeline.css */
+
+/* ... (previous timeline and button CSS) ... */
+
+/* Styles for the "Learn more about me" button */
+.learn-more-btn {
+  /* Initial state for animation */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+  /* Optional: slightly scale down by default or add a subtle shadow */
+  transform: scale(1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
+}
+
+.learn-more-btn:hover {
+  /* Lift and slightly scale on hover */
+  transform: translateY(-5px) scale(1.02); /* Lifts up and grows slightly */
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4); /* Stronger, blue glow shadow on hover */
+  background-color: #0069d9; /* Slightly darker primary color on hover */
+}
+
+.learn-more-btn:active {
+  /* Press effect */
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add a subtle pulse animation for continuous dynamism */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.01); /* Subtle slight growth */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.763); /* Subtle glow pulse */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.learn-more-btn {
+  /* Apply pulse animation if desired */
+  animation: pulse 2s infinite ease-in-out; /* 2 seconds duration, infinite loop, ease-in-out timing */
+}
+
+/* To prevent pulse from interfering with hover: */
+.learn-more-btn:hover {
+  animation: none; /* Stop pulsing on hover */
+}
+
+
+
+.home-avatar {
+  /* This is the key property for the fade effect */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+  /* Ensure the image has a background if the fade reveals transparency */
+  /* If the section behind is solid, this might not be strictly necessary,
+     but it's good practice for masking. */
+  background-color: transparent; /* Or a color that matches your background */
+}
+

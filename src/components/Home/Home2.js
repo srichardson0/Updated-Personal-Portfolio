@@ -2,9 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+
+{/* import {
+  AiFillGithub,
+  AiOutlineTwitter, 
+} from "react-icons/ai"; */}
 
 function Home2() {
   return (
@@ -28,7 +32,7 @@ function Home2() {
                   <AiFillGithub />
                 </a>
               </li>
-              <li className="social-icons">
+              { /* <li className="social-icons">
                 <a
                   href="#"
                   target="_blank"
@@ -37,7 +41,7 @@ function Home2() {
                 >
                   <AiOutlineTwitter />
                 </a>
-              </li>
+              </li> */}
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/sasha-richardson/"

@@ -9,13 +9,31 @@ function ProjectCards(props) {
     <Card className="project-card-view">
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       <Card.Body>
+        
+        {/* Render tags if provided */}
+        {props.tags && props.tags.length > 0 && (
+          <div
+            className="project-tags"
+            style={{
+              marginBottom: "10px",
+              textAlign: "center",
+            }}
+          >
+            {props.tags.map((tag, idx) => (
+              <span key={idx} className="badge bg-secondary mx-1">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>
           {props.description}
         </Card.Text>
 
+
         {/* Conditionally render the GitHub button */}
-        {props.ghLink && ( // Only render if props.ghLink is provided (not null, undefined, or empty string)
+        {props.ghLink && (
           <Button variant="primary" href={props.ghLink} target="_blank">
             <BsGithub /> &nbsp;
             {props.isBlog ? "Blog" : "GitHub"}
@@ -26,7 +44,6 @@ function ProjectCards(props) {
         {"\n"}
 
         {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
         {!props.isBlog && props.demoLink && (
           <Button
             variant="primary"

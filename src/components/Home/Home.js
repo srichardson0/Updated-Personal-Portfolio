@@ -7,7 +7,9 @@ import Type from "./Type";
 import Tilt from "react-parallax-tilt";
 import EducationTimeline from "./EducationTimeline"; // Import the new component
 import { Link } from "react-router-dom"; // Import Link
- 
+import Techstack from "../About/Techstack";
+import Toolstack from "../About/Toolstack";
+
 function Home() {
   return (
     <section>
@@ -73,6 +75,20 @@ function Home() {
         </Container>
       </Container>
       {/* --- End Education Timeline Section --- */}
+      {/* --- Skillset and Tools Section --- */}
+      <Container fluid className="home-about-section">
+        <Container>
+          <h1 className="project-heading">
+            Professional <strong className="purple">Skillset </strong>
+          </h1>
+          <Techstack />
+          <h1 className="project-heading">
+            <strong className="purple">Tools</strong> I use
+          </h1>
+          <Toolstack />
+        </Container>
+      </Container>
+      {/* --- End Skillset and Tools Section --- */}
       <Home2 />
     </section>
   );

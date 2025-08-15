@@ -449,10 +449,11 @@ button:focus {
   padding-top: 150px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
+  pointer-events: auto;
 }
 
 .project-card {
-  padding-top: 50px !important;
+  padding-top: 10px !important;
   padding-bottom: 50px !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
@@ -461,9 +462,9 @@ button:focus {
 
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
-  color: white !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
+  color: rgb(0, 0, 0) !important;
+  background-color: rgba(255, 255, 255, 0.561)/*transparent*/ !important;
+  opacity: 0.95 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
@@ -473,6 +474,57 @@ button:focus {
   box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
 }
 
+
+.tag-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tag-navigation .btn {
+  background-color: rgba(108, 99, 255, 0.2) !important;
+  color: #fff !important;
+  border: 1px solid rgba(200, 137, 230, 0.637) !important;
+  margin: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+}
+
+.tag-navigation .btn:hover {
+  background-color: rgba(108, 99, 255, 0.4) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
+}
+
+/* Style for active/selected tag */
+.tag-navigation .btn-dark {
+  background-color: #c770f0 !important;
+  border-color: #c770f0 !important;
+  color: white !important;
+}
+
+/* Style for non-selected tags */
+.tag-navigation .btn-outline-dark {
+  background-color: transparent !important;
+  border-color: #c770f0 !important;
+  color: #c770f0 !important;
+}
+
+.tag-navigation .btn-outline-dark:hover {
+  background-color: #c770f0 !important;
+  color: white !important;
+}
+
+/* Project card tags style */
+.project-tags .badge {
+  background-color: rgba(199, 112, 240, 0.2) !important;
+  color: #000000 !important;
+  border: 1px solid #000000;
+  margin: 2px;
+  padding: 5px 10px;
+}
 .blog-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;

@@ -4,8 +4,8 @@ import {
   DiJavascript1,
   DiPython,
   DiGit,
+  DiDatabase
 } from "react-icons/di";
-import { PiFileSqlThin } from "react-icons/pi";
 import { SiTableau } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import './Toolstack.css'; // Import the new CSS file
@@ -21,7 +21,7 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2}>
         <div className="tech-icon-wrapper">
-          <PiFileSqlThin />
+          <DiDatabase />
           <span className="tooltip-text">SQL</span>
         </div>
       </Col>

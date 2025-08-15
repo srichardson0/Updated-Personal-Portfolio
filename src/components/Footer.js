@@ -6,7 +6,7 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3> Website Design inspired by{" "}
+          {/*<h3> Website Design inspired by{" "}
             <a
               href="https://github.com/soumyajit4419" // The URL you want to link to
               style={{ color: "gray", textDecoration: "none" }} // Optional: Style the link
@@ -15,7 +15,7 @@ function Footer() {
             >
               Soumyajit Behera
             </a>
-            </h3>
+            </h3>*/}
         </Col>
        
       </Row>

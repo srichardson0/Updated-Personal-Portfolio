@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import peoplemapimg from "../../Assets/Projects/peoplemap-project.png";
 import movieratingsimg from "../../Assets/Projects/movie_ratings.png";
 import marketanalysisimg from "../../Assets/Projects/marketanalysis.png";
+import { SiGooglescholar, SiOrcid } from "react-icons/si";
 
 // 1. Store projects in an array with detailed tags
 // 2. Add a tag navigation bar to filter projects by tags
@@ -16,7 +17,7 @@ const projects = [
   {
     imgPath: peoplemapimg,
     isBlog: false,
-    tags: ["NLP", "Data Visualization", "D3.js", "Web Development"],
+    tags: ["NLP", "D3.js", "Web Development"],
     title: "PeopleMap",
     description: "An open-source, web-based tool that visually maps researchers based on their interests and publications, addressing the challenge of outdated directories and fostering collaboration opportunities.",
     demoLink: "https://poloclub.github.io/people-map/ml/",
@@ -61,6 +62,36 @@ function Projects() {
         <h1 className="project-heading">
           <strong>See What I've Worked on</strong>
         </h1>
+
+        {/* Academic Profile Links */}
+        <div className="home-about-social" style={{ marginBottom: "2rem" }}>
+          <p>
+            Find my academic publications on <span className="purple">Google Scholar </span> 
+            and <span className="purple">ORCID</span>
+          </p>
+          <ul className="home-about-social-links">
+            <li className="social-icons">
+              <a
+                href="https://scholar.google.com/citations?hl=en"
+                target="_blank"
+                rel="noreferrer"
+                className="icon-colour home-social-icons"
+              >
+                <SiGooglescholar />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://orcid.org/0009-0004-7585-4470"
+                target="_blank"
+                rel="noreferrer"
+                className="icon-colour home-social-icons"
+              >
+                <SiOrcid />
+              </a>
+            </li>
+          </ul>
+        </div>
 
         {/* Tag Navigation Bar */}
         <div className="tag-navigation" style={{

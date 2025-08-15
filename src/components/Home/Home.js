@@ -9,8 +9,46 @@ import EducationTimeline from "./EducationTimeline"; // Import the new component
 import { Link } from "react-router-dom"; // Import Link
 import Techstack from "../About/Techstack";
 import Toolstack from "../About/Toolstack";
+import { FaLaptopCode, FaChartBar } from "react-icons/fa";
+import { GiBrain } from "react-icons/gi";
 
 function Home() {
+  React.useEffect(() => {
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+
+    function showSlides() {
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = "0";
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      // Show next slide
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      slides[slideIndex - 1].style.opacity = "1";
+      dots[slideIndex - 1].className += " active";
+
+      // Change slide every 3 seconds
+      setTimeout(showSlides, 5000);
+    }
+
+    showSlides();
+
+    // Cleanup function
+    return () => {
+      const allTimeouts = setTimeout(() => {});
+      for (let i = 0; i < allTimeouts; i++) {
+        clearTimeout(i);
+      }
+    };
+  }, []);
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -42,7 +80,7 @@ function Home() {
                 */}
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20, marginTop: '0px' }}>
+            <Col md={5} style={{ paddingBottom: 20, marginTop: "0px" }}>
               <Tilt>
                 <img
                   src={homeLogo}
@@ -64,17 +102,66 @@ function Home() {
             </Col>
           </Row>
           {/* Add the button here, typically in its own row or column for layout control */}
-          <Row className="justify-content-center mt-5">
+          {/* <Row className="justify-content-center mt-5">
             <Col md={4} className="text-center">
               {/* Add the custom class 'learn-more-btn' here */}
-              <Link to="/about" className="btn btn-primary btn-lg learn-more-btn">
+              {/* <Link to="/about" className="btn btn-primary btn-lg learn-more-btn">
                 Learn More About Me
               </Link>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </Container>
       {/* --- End Education Timeline Section --- */}
+      {/* --- Areas of Interest Section --- */}
+      <Container fluid className="home-about-section" id="interests">
+        <Container>
+          <h1 className="project-heading">
+            Areas of <strong className="purple">Interest </strong>
+          </h1>
+          <div className="slideshow-container">
+            {[
+              {
+                title: "Digital Humanities",
+                description: "Exploring intersections of technology and humanities",
+                icon: <FaLaptopCode size={40} />,
+                gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+              },
+              {
+                title: "Data Visualization",
+                description: "Creating meaningful visual narratives from data",
+                icon: <FaChartBar size={40} />,
+                gradient: "linear-gradient(135deg, #2af598 0%, #009efd 100%)"
+              },
+              {
+                title: "Artificial Intelligence",
+                description: "Leveraging AI for innovative solutions",
+                icon: <GiBrain size={40} />,
+                gradient: "linear-gradient(135deg, #a5445dff 0%, #ffb199 100%)"
+              }
+            ].map((interest, index) => (
+              <div key={index} className="slide fade">
+                <div
+                  className="interest-card"
+                  style={{
+                    background: interest.gradient,
+                  }}
+                >
+                  <div className="interest-icon">{interest.icon}</div>
+                  <h3>{interest.title}</h3>
+                  <p>{interest.description}</p>
+                </div>
+              </div>
+            ))}
+            <div className="dots">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          </div>
+        </Container>
+      </Container>
+      {/* --- End Areas of Interest Section --- */}
       {/* --- Skillset and Tools Section --- */}
       <Container fluid className="home-about-section">
         <Container>

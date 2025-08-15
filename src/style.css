@@ -398,6 +398,7 @@ button:focus {
   color: #700c86 !important;
 }
 
+
 /* --------- */
 /* Footer */
 /* --------- */
@@ -858,4 +859,134 @@ button:focus {
      but it's good practice for masking. */
   background-color: transparent; /* Or a color that matches your background */
 }
+
+/* Areas of Interest Section Styles */
+.interest-card {
+  padding: 25px;
+  border-radius: 15px;
+  height: 100%;
+  min-height: 250px;
+  max-height: 300px; /* Add max-height to control card size */
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.interest-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.interest-card:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.interest-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.interest-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.interest-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Add subtle animation for cards */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.interest-cards {
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.interest-card:nth-child(1) { animation: float 6s ease-in-out infinite; }
+.interest-card:nth-child(2) { animation: float 6s ease-in-out infinite 0.2s; }
+.interest-card:nth-child(3) { animation: float 6s ease-in-out infinite 0.4s; }
+
+/* Slideshow styles */
+.slideshow-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  height: 400px; /* Increase height to accommodate dots */
+  padding-top: 50px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Dots navigation */
+.dots {
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent; /* Ensure background is transparent */
+  z-index: 10; /* Ensure dots stay on top */
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #c770f0;
+}
+
+/* Fade animation */
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 0.4}
+}
+
+
+
+
+
 

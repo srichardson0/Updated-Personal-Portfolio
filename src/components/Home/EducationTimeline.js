@@ -11,13 +11,13 @@ function EducationTimeline() {
     },
     {
       year: "2022 - 2024",
-      title: "Master of Science in Business Analytics",
+      title: "MS in Business Analytics",
       institution: "Baruch College (CUNY), Zicklin School of Business, New York, NY",
       description: "Data Analytics."
     },
     {
       year: "2017 - 2021",
-      title: "Bachelor of Science in Computer Science",
+      title: "BS in Computer Science",
       institution: "Fayetteville State University, Fayetteville, NC",
       description: "Graduated Summa Cum Laude."
     }
